@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo DOM JavaScripy</title>
+    <style>
+        .azul{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="azul" id ='cabecero'>Ejemplo Dom javaScript</h1>
+    <p class="azul" id='parrafo'>Parrafo</p>
+    <p class="azul" id='parrafo2'>Otro Parrafo</p>
+    <script>
+        let cabecero = document.getElementById('cabecero').innerHTML;
+        let parrafo = document.getElementById('parrafo').innerHTML;
+        console.log('valor cabecero: '+ cabecero);
+        console.log('valor parrafo: '+ parrafo);
+
+        console.log("----------------obtener informacion por id de elemento-------------------------");
+
+        let cabecero1 = document.getElementById('cabecero');
+        let parrafo1 = document.getElementById('parrafo');
+        console.log(`valor cabecero: ${cabecero1.innerHTML} \nvalor parrafo: ${parrafo1.innerHTML}`);
+        
+        parrafo1.innerHTML="Nuevo valor del parrafo";
+
+        console.log("--------------- get elemets by tag name arma un arreglo P (parrafo)--------------------------");
+        let parrafos = document.getElementsByTagName('p');
+        console.log(`No. parrafos: ${parrafos.length}`)
+        for( let i=0; i<parrafos.length;i++)
+        {
+            console.log(`i:${i} - ${parrafos[i].innerHTML}`);
+        }
+
+        console.log("--------------- get elemets by class con otro for name arma un arreglo P (elemetos class)--------------------------");
+        let parrafos1 = document.getElementsByClassName('azul');
+        console.log(`No. parrafos: ${parrafos1.length}`)
+        for(let parrafo of parrafos1)
+        {
+            console.log(`${parrafo.innerHTML}`);
+        }
+
+
+
+    </script>
+</body>
+</html>
